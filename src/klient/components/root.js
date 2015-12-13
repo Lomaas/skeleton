@@ -2,11 +2,15 @@ import React, {Component, PropTypes} from 'react'
 import ReactDOM from 'react-dom'
 import { createStore, combineReducers } from 'redux'
 import { Provider, connect} from 'react-redux'
-import actionTypes from './../actions/types'
-import MessageForm from './message-form'
 import {reducer as formReducer} from 'redux-form'
+import { fetchMessagesIfNeeded } from '../actions'
+import MessageForm from './message-form'
 
 class Root extends Component {
+  componentDidMount() {
+    fetchMessagesIfNeeded()
+  }
+
   render () {
     const { value, messages, message, onIncreaseClick, handleSubmit } = this.props
     const lis = messages.map(item => <li>{item.text}</li>)

@@ -9,6 +9,7 @@ require('dotenv').load();
 
 var users = require('./routes/users');
 var login = require('./routes/login');
+var messages = require('./routes/messages');
 var app = express();
 
 app.use(express.static(__dirname + '/public'));
@@ -24,6 +25,8 @@ app.get('/', function(req, res) {
 
 app.use('/users', users);
 app.use('/login', login);
+app.use('/messages', messages);
+app.use('/message', message);
 
 app.use(function (error, request, response, next) {
   response.status(error.status || 500);
