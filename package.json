@@ -1,0 +1,38 @@
+{
+  "name": "TidTaking",
+  "version": "0.0.0",
+  "description": "Tidtaking",
+  "main": "index.js",
+  "scripts": {
+    "start": "watchify --extension=js -o ./src/server/public/bundle.js ./src/klient/index.js & nodemon ./src/server/server.js"
+  },
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "bluebird": "~2.9.25",
+    "body-parser": "^1.12.3",
+    "cors": "^2.6.0",
+    "dotenv": "^1.1.0",
+    "express": "^4.13.3",
+    "helmet": "^0.9.0",
+    "immutable": "^3.7.5",
+    "jwt-simple": "^0.3.0",
+    "moment": "^2.10.2",
+    "morgan": "^1.5.2",
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0",
+    "react-redux": "^3.1.0",
+    "redux": "^3.0.0",
+    "redux-form": "^3.1.7",
+    "rethinkdb": "^2.0.0"
+  },
+  "devDependencies": {
+    "browserify": "~10.2.4",
+    "babelify": "~6.1.2",
+    "watchify": "^3.3.1"
+  }
+}
